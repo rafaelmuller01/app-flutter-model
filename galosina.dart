@@ -54,7 +54,7 @@ class _CalculadoraCombustivelState extends State<CalculadoraCombustivel> {
           child: Column(children: [
             Center(child: Text('bora economizar?',
             style: TextStyle(
-              color: Colors.black, fontFamily: 'arial', fontSize: 22
+              color: Colors.black, fontFamily: 'arial', fontSize: 25
             ),
             )),
             TextFormField(
@@ -83,17 +83,20 @@ class _CalculadoraCombustivelState extends State<CalculadoraCombustivel> {
                 style: ElevatedButton.styleFrom(
                   primary: Colors.green[900],
                   elevation: 20,
-                  shadowColor: Colors.red[900],
+                  shadowColor: Colors.green[400],
                 ),
                 onPressed: calcularCombustivel,
                 child: Text(
                   'calcular o combustivel',
                   style: TextStyle(
-                      color: Colors.white, fontFamily: 'arial', fontSize: 18),
+                      color: Colors.white, fontFamily: 'arial', fontSize: 20),
                 ),
               ),
             ),
-            Center(child: Text('o melhor combustível é: ')),
+            Center(child: Text(
+              'o melhor combustível é: ',
+              style: TextStyle(
+                color: Colors.green[900], fontFamily: 'arial', fontSize: 20),)),
             Text('$melhorcombustivel')
           ]),
         ),
