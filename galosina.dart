@@ -35,6 +35,9 @@ class _CalculadoraCombustivelState extends State<CalculadoraCombustivel> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primaryColor: Colors.green[900]
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: Center(
@@ -44,25 +47,35 @@ class _CalculadoraCombustivelState extends State<CalculadoraCombustivel> {
           )),
         ),
         bottomNavigationBar: BottomAppBar(
-          child: Text('app Desenvolvido pelos alunos'),
+          child: Text('app Desenvolvido pelo rafael'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(40),
           child: Column(children: [
-            Center(child: Text('bora economizar?')),
+            Center(child: Text('bora economizar?',
+            style: TextStyle(
+              color: Colors.black, fontFamily: 'arial', fontSize: 22
+            ),
+            )),
             TextFormField(
               decoration: InputDecoration(
                   border: UnderlineInputBorder(),
                   hintText: 'informe apenas valores númericos. Ex: 5.29',
                   icon: Icon(Icons.local_gas_station),
                   labelText: 'informe o valor da gasolina: '),
+              onChanged: (valorg) {
+                gasolina = valorg.replaceAll('','');
+              },
             ),
             TextFormField(
               decoration: InputDecoration(
                   border: UnderlineInputBorder(),
                   hintText: 'informe apenas valores númericos. Ex: 4.29',
-                  icon: Icon(Icons.local_gas_station),
+                  icon: Icon(Icons.local_gas_station_outlined),
                   labelText: 'informe o valor do etanol: '),
+              onChanged: (valora) {
+                etanol = valora.replaceAll('','');
+              },
             ),
             Padding(
               padding: const EdgeInsets.all(40),
@@ -76,7 +89,7 @@ class _CalculadoraCombustivelState extends State<CalculadoraCombustivel> {
                 child: Text(
                   'calcular o combustivel',
                   style: TextStyle(
-                      color: Colors.white, fontFamily: 'arial', fontSize: 14),
+                      color: Colors.white, fontFamily: 'arial', fontSize: 18),
                 ),
               ),
             ),
