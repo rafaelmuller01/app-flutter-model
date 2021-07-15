@@ -39,6 +39,7 @@ class _CalculadoraCombustivelState extends State<CalculadoraCombustivel> {
         primaryColor: Colors.green[900]
       ),
       home: Scaffold(
+        backgroundColor: Colors.green[200],
         appBar: AppBar(
           title: Center(
               child: Text(
@@ -104,4 +105,3 @@ class _CalculadoraCombustivelState extends State<CalculadoraCombustivel> {
     );
   }
 }
-
